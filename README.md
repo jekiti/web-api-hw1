@@ -15,14 +15,15 @@
 telnet example.com 80
 ```
 Запрос:
-
+```
 GET / HTTP/1.1
 Host: example.com
 User-Agent: Mozilla/5.0
 Accept: text/html
 Connection: close
-
+```
 Ответ сервера
+```
 HTTP/1.1 200 OK
 Content-Type: text/html
 ETag: "bc2473a18e003bdb249eba5ce893033f:1760028122.592274"
@@ -33,12 +34,26 @@ Content-Length: 513
 Connection: close
 X-N: S
 
-<!doctype html><title>Example Domain</title><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style>
+
+<!doctype html>
+<title>Example Domain</title>
+<style>
+body {
+  background: #eee;
+  width: 60vw;
+  margin: 15vh auto;
+  font-family: system-ui, sans-serif;
+}
+h1 { font-size: 1.5em; }
+div { opacity: 0.8; }
+a:link, a:visited { color: #348; }
+</style>
 
 Example Domain
 This domain is for use in documentation examples without needing permission. Avoid use in operations.
 
 Learn more
+```
 
 Анализ
 1. Строка статуса
@@ -48,15 +63,18 @@ HTTP/1.1 — версия протокола;
 200 OK — код состояния (успешный ответ).
 
 2. Заголовки
-| Заголовок        | Назначение                                       |
-| ---------------- | ------------------------------------------------ |
-| `Content-Type`   | Тип контента — HTML-документ                     |
-| `Content-Length` | Длина тела ответа в байтах                       |
-| `Date`           | Дата и время формирования ответа                 |
-| `Last-Modified`  | Когда страница последний раз изменялась          |
-| `ETag`           | Идентификатор версии ресурса                     |
-| `Cache-Control`  | Время хранения кэша                              |
-| `Connection`     | Политика соединения (в данном случае — закрытие) |
+
+| Заголовок          | Назначение                                                          |
+| ------------------ | ------------------------------------------------------------------- |
+| **Content-Type**   | Тип передаваемого содержимого (HTML-документ).                      |
+| **Content-Length** | Длина тела ответа в байтах.                                         |
+| **Date**           | Дата и время формирования ответа.                                   |
+| **Last-Modified**  | Когда страница последний раз изменялась.                            |
+| **ETag**           | Уникальный идентификатор версии ресурса.                            |
+| **Cache-Control**  | Время хранения ресурса в кэше.                                      |
+| **Connection**     | Политика соединения — после передачи данных соединение закрывается. |
+
+
 
 3. Тело ответа
 
