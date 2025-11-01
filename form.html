@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4 — Отправка формы на httpbin.org</title>
+</head>
+<body>
+    <h1>Отправка формы методом POST (multipart/form-data)</h1>
+
+    <form action="http://httpbin.org/post" method="POST" enctype="multipart/form-data">
+        <label>Имя (firstname): 
+            <input type="text" name="firstname" required>
+        </label><br><br>
+
+        <label>Фамилия (lastname): 
+            <input type="text" name="lastname" required>
+        </label><br><br>
+
+        <label>Группа (group): 
+            <input type="text" name="group" required>
+        </label><br><br>
+
+        <label>Сообщение (message):<br>
+            <textarea name="message" rows="4" cols="40" placeholder="Введите сообщение..." required></textarea>
+        </label><br><br>
+
+        <label>Изображение (myimg): 
+            <input type="file" name="myimg" accept="image/*" required>
+        </label><br><br>
+
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>
